@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <domain-config cleartextTrafficPermitted="true">
+        <!-- Permite todo el tráfico HTTP (no seguro) -->
+        <domain includeSubdomains="true">localhost</domain>
+        <domain includeSubdomains="true">10.0.2.2</domain>
+        <domain includeSubdomains="true">127.0.0.1</domain>
+        
+        <!-- Tu API de Firebase -->
+        <domain includeSubdomains="true">8080-firebase-as232s4t04-begit-1748620116624.cluster-qhrn7lb3szcfcud6uanedbkjnm.cloudworkstations.dev</domain>
+        
+        <!-- Dominios de Firebase en general por si cambias de instancia -->
+        <domain includeSubdomains="true">cloudworkstations.dev</domain>
+        <domain includeSubdomains="true">firebaseapp.com</domain>
+        <domain includeSubdomains="true">googleapis.com</domain>
+    </domain-config>
+    
+    <!-- Configuración base que permite conexiones HTTP en debug -->
+    <base-config cleartextTrafficPermitted="true">
+        <trust-anchors>
+            <certificates src="system"/>
+        </trust-anchors>
+    </base-config>
+</network-security-config>
